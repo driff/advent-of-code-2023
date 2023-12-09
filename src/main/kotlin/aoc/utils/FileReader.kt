@@ -6,7 +6,7 @@ object FileReader {
 
     fun listAllFiles(directoryName: String = "."): List<File> =
         File(directoryName).listFiles { file ->
-            file.isDirectory
-        }.toList()
+            file.isFile
+        }?.toList()?: emptyList()
 
 }

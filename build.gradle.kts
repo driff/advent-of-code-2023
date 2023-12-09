@@ -10,8 +10,13 @@ repositories {
 }
 
 dependencies {
+    val kotestVersion = "5.8.0"
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
+    testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
+
+
 }
 
 tasks.test {
