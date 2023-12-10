@@ -60,10 +60,8 @@ fun getUpdatedAccumulator(acc: Array<Char?>, current: Char): Array<Char?> {
 
 private fun getDigitNameFromChar(current: Char, digitData: DigitData): DigitData? {
     val (acc, digits) = digitData
-//    val currentIndex = index?.let { it + 1 }?: 0
     val currentDigits: MutableList<Pair<Digits, Int>> = digits?.toMutableList()?: mutableListOf()
     currentDigits.addAll(Digits.entries.map { it to 0 })
-//    println("current char $current")
     return currentDigits.filter { (digit, currentIndex) -> digit.name[(currentIndex) ] == current }
         .takeIf { it.isNotEmpty() }
         ?.map { it.copy(second = it.second + 1) }
