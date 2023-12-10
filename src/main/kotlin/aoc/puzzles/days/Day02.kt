@@ -11,7 +11,6 @@ fun day02APuzzle(lines: List<String>): Int {
     return lines.takeUnless { it.isEmpty() }?.fold(0) { acc, current ->
         current.parseInput().let { (gameNumber, cubeValues) ->
             if (cubeValues.isPossible(maxValues)) {
-                println("Game $gameNumber is possible -> ${cubeValues.contentToString()}")
                 acc + gameNumber
             } else {
 //                println("Game $gameNumber is not possible -> ${cubeValues.contentToString()}")
