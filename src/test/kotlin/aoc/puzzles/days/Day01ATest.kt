@@ -46,8 +46,6 @@ import org.junit.jupiter.api.Test
 
 class Day01ATest: BehaviorSpec({
 
-
-
     given("day01aPuzzle is invoked") {
         and("text list instance") {
             lateinit var textList: List<String>
