@@ -33,11 +33,7 @@ enum class Digits(val number: Char) {
 
 fun day01bPuzzle(lines: List<String>): Int =
     lines.takeUnless { it.isEmpty() }?.fold(0) { acc, current ->
-        val mappedText = numMap.entries.fold(current) { accumulator, (key, value) -> accumulator.replace(key, value) }
         val number = current.findNumbersInText()
-        val digits = mappedText.findDigitsInText()
-        if (number != digits) println("$current -> number: $number != digits: $digits")
-//        println(" -> current: $current -> number: $number")
         return@fold acc + number
     }?: 0
 
@@ -60,17 +56,6 @@ fun getUpdatedAccumulator(acc: Array<Char?>, current: Char): Array<Char?> {
     if(acc.isEmpty() || acc[0] == null) newAcc[0] = current
     else newAcc[1] = current
     return newAcc
-}
-
-val numMap =
-    mapOf("one" to "one1one", "two" to "two2two", "three" to "three3three", "four" to "four4four",
-        "five" to "five5five", "six" to "six6six", "seven" to "seven7seven", "eight" to "eight8eight",
-        "nine" to "nine9nine")
-fun part2(input: List<String>): Int {
-    val updatedInput = input.map() { line ->
-        numMap.entries.fold(line) { accumulator, (key, value) -> accumulator.replace(key, value) }
-    }
-    return day01aPuzzle(updatedInput)
 }
 
 private fun getDigitNameFromChar(current: Char, digitData: DigitData): DigitData? {
