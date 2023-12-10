@@ -6,7 +6,7 @@ import org.aoc.aoc.puzzles.days.day01bPuzzle
 
 class Day01BTest : BehaviorSpec({
 
-    given("day01bPuzzle") {
+    given("day01Puzzle") {
         and("text list instance") {
             lateinit var textList: List<String>
             When("list of text lines is empty") {
